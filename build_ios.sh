@@ -150,3 +150,5 @@ function main(){
     echo "* * * Over The Air * * *"
     build_ota_plist                  
 }
+
+main
