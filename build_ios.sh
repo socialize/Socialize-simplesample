@@ -18,7 +18,7 @@ target="simplesample"
 sdk="iphoneos5.1"
 
 project_app_dir="$project_dir/build/Release-iphoneos/$target.app"
-mobile_provision="simple_sample_production.mobileprovision"
+mobile_provision="/usr/local/socialize/simple_sample_production.mobileprovision"
 provisioning_profile="iPhone Distribution: pointabout"
 build_number="%env.BUILD_NUMBER%"
 artifacts_url="http://ned.appmakr.com/artifacts/$build_number"
