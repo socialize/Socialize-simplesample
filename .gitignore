@@ -1,6 +1,5 @@
 .DS_Store
 simplesample.app.plist
-build_ios.sh
 simple_sample_production.mobileprovision
 socialize-sdk-ios
 BurgerTime/build/*
