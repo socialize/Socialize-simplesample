@@ -115,11 +115,7 @@ function build_app(){
 }
 
 function packaging_app(){
-    /usr/bin/xcrun -sdk "$sdk"\ 
-    PackageApplication -v "$project_app_dir"\
-        -o "$root_dir/$target.ipa"\
-        --sign "$provisioning_profile"\
-        --embed "$mobile_provision"
+    /usr/bin/xcrun -sdk "$sdk" PackageApplication -v "$project_app_dir" -o "$root_dir/$target.ipa" --sign "$provisioning_profile" --embed "$mobile_provision"
     [ $? != 0 ] && exit 1
 }
 
@@ -133,13 +129,13 @@ function main(){
     
 
     echo " * * * clean * * * "
-    clean   
+    #clean   
 
     echo " * * * git clone & build * * *"
-    git_build
+    #git_build
 
     echo " * * * build * * * "
-    build_app
+    #build_app
 
     echo " * * * Packaging * * * "
     packaging_app
