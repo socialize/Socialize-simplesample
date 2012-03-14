@@ -28,10 +28,9 @@ project_app_dir="$project_dir/build/Release-iphoneos/$target.app"
 mobile_provision="/usr/local/socialize/simple_sample_production.mobileprovision"
 provisioning_profile="iPhone Distribution: pointabout"
 build_number="%env.BUILD_NUMBER%"
-artifacts_url="http://ned.appmakr.com/repository/download/bt35/17816:id/Icon.png"
 
-display_image_name="Icon-57.png"
-full_size_image_name="Icon-512.png"
+display_image_name="Icon.png"
+full_size_image_name="Icon.png"
 
 function failed()
 {
@@ -43,6 +42,10 @@ function failed()
 function build_ota_plist()
 {
     env=$1
+    buildType=$1
+    buildId=$2
+    artifacts_url="http://ned.appmakr.com/repository/download/$buildType/$buildId:id/"
+
     echo "Generating $target$env.app.plist"
     cat << EOF > $root_dir/$target$env.app.plist
 <?xml version="1.0" encoding="UTF-8"?>
@@ -80,9 +83,9 @@ function build_ota_plist()
       <key>metadata</key>
       <dict>
         <key>bundle-identifier</key>
-        <string>001</string>
+        <string>$buildId</string>
         <key>bundle-version</key>
-        <string>test 001</string>
+        <string>$buildType $buildId</string>
         <key>kind</key>
         <string>software</string>
         <key>subtitle</key>
@@ -153,7 +156,8 @@ function code_sign(){
 
 
 function main(){
-    
+    buildType=$1
+    buildId=$2
 
     echo " * * * clean * * * "
     clean   
@@ -176,8 +180,8 @@ function main(){
     code_sign
 
     echo "* * * Over The Air * * *"
-    build_ota_plist stage
-    build_ota_plist prod
+    build_ota_plist stage $buildType $buildId
+    build_ota_plist prod $buildType $buildId
 }
 
 main
