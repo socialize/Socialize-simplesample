@@ -42,8 +42,6 @@ function failed()
 function build_ota_plist()
 {
     env=$1
-    buildType=$1
-    buildId=$2
     artifacts_url="http://ned.appmakr.com/repository/download/$buildType/$buildId:id/"
 
     echo "Generating $target$env.app.plist"
@@ -180,8 +178,8 @@ function main(){
     code_sign
 
     echo "* * * Over The Air * * *"
-    build_ota_plist stage $buildType $buildId
-    build_ota_plist prod $buildType $buildId
+    build_ota_plist stage
+    build_ota_plist prod
 }
 
 main
