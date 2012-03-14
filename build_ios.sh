@@ -42,7 +42,9 @@ function failed()
 function build_ota_plist()
 {
     env=$1
-    artifacts_url="http://ned.appmakr.com/repository/download/$buildType/$buildId:id"
+    buildType=$2
+    buildId=$3
+    artifacts_url="http://ned.appmakr.com/repository/download/%system.teamcity.buildType.id%/%teamcity.build.id%:id"
 
     echo "Generating $target$env.app.plist"
     cat << EOF > $root_dir/$target$env.app.plist
@@ -154,9 +156,6 @@ function code_sign(){
 
 
 function main(){
-    buildType=$1
-    buildId=$2
-
     echo " * * * clean * * * "
     clean   
 
