@@ -1,7 +1,8 @@
 .DS_Store
+simplesample.ipa
 simplesample.app.plist
 simple_sample_production.mobileprovision
-socialize-sdk-ios
 BurgerTime/build/*
 *.swp
+*.swo
 .DS_Store
