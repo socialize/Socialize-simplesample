@@ -42,7 +42,7 @@ function failed()
 function build_ota_plist()
 {
     env=$1
-    artifacts_url="http://ned.appmakr.com/repository/download/$buildType/$buildId:id/"
+    artifacts_url="http://ned.appmakr.com/repository/download/$buildType/$buildId:id"
 
     echo "Generating $target$env.app.plist"
     cat << EOF > $root_dir/$target$env.app.plist
