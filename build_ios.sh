@@ -1,6 +1,11 @@
 
 ##  App config
-api_host="http://stage.api.getsocialize.com"
+old_redirect_host="http://r.getsocialize.com"
+redirect_host="http://stage.getsocialize.com"
+old_https_host="https://api.getsocialize.com"
+https_host="https://stage.api.getsocialize.com"
+old_http_host="http://api.getsocialize.com"
+http_host="http://stage.api.getsocialize.com"
 consumer_key="8d4afa04-0ab8-4173-891a-5027c8b827f6"
 consumer_secret="25957111-3f42-413d-8d5b-a602c32680d5"
 facebook_app_id="193049117470843"
@@ -13,6 +18,8 @@ project_name="BurgerTime"
 root_dir=`pwd`
 project_dir=$root_dir/$project_name
 build_dir=$project_dir/build
+config_path="build/Socialize.embeddedframework/Socialize.framework/Versions/A/Resources/"
+config_file="SocializeConfigurationInfo.plist"
 environment="stage"
 target="simplesample"
 sdk="iphoneos5.1"
@@ -21,7 +28,8 @@ project_app_dir="$project_dir/build/Release-iphoneos/$target.app"
 mobile_provision="/usr/local/socialize/simple_sample_production.mobileprovision"
 provisioning_profile="iPhone Distribution: pointabout"
 build_number="%env.BUILD_NUMBER%"
-artifacts_url="http://ned.appmakr.com/artifacts/$build_number"
+artifacts_url="http://ned.appmakr.com/repository/download/bt35/17816:id/Icon.png"
+
 display_image_name="Icon-57.png"
 full_size_image_name="Icon-512.png"
 
@@ -34,8 +42,9 @@ function failed()
 
 function build_ota_plist()
 {
-  echo "Generating $target.app.plist"
-  cat << EOF > $root_dir/$target.app.plist
+    env=$1
+    echo "Generating $target$env.app.plist"
+    cat << EOF > $root_dir/$target$env.app.plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -49,7 +58,7 @@ function build_ota_plist()
           <key>kind</key>
           <string>software-package</string>
           <key>url</key>
-          <string>$artifacts_url/$target.ipa</string>
+          <string>$artifacts_url/$target$env.ipa</string>
         </dict>
         <dict>
           <key>kind</key>
@@ -77,9 +86,9 @@ function build_ota_plist()
         <key>kind</key>
         <string>software</string>
         <key>subtitle</key>
-        <string>stage</string>
+        <string>$env</string>
         <key>title</key>
-        <string>$BurgerTime</string>
+        <string>$project_name</string>
       </dict>
     </dict>
   </array>
@@ -93,7 +102,13 @@ function clean(){
     echo ">>> remove all file in $build_dir/*"
     rm -rf $build_dir/*
     echo ">>> remove simplesample.ipa"
-    rm simplesample.ipa
+    rm -rfv simplesample*
+}
+
+function replace(){
+    mv $3 $3_old
+    sed -e "s@$1@$2@g" $3_old  > $3
+    rm -f $3_old
 }
 
 function git_build(){
@@ -104,8 +119,19 @@ function git_build(){
         $git_clone && cd $ios_repo && git submodule update --init
     fi
     make package
-
 }
+function config_host_stage(){
+    cd $root_dir/$ios_repo/$config_path
+    echo "begin replace config on socialize config"
+    replace $old_redirect_host $redirect_host $config_file
+    replace $old_https_host $https_host $config_file
+    replace $old_http_host $http_host $config_file
+    #sed -e "s@$old_redirect_host@$redirect_host@g" $config_file  > $config_file
+    #sed -e "s@$old_https_host@$https_host@g" $config_file > $config_file
+    #sed -e "s@$old_http_host@$http_host@g" $config_file > $config_file
+}
+
+
 function build_app(){
     cd $project_dir
     xcodebuild -target "$target"\
@@ -115,7 +141,8 @@ function build_app(){
 }
 
 function packaging_app(){
-    /usr/bin/xcrun -sdk "$sdk" PackageApplication -v "$project_app_dir" -o "$root_dir/$target.ipa" --sign "$provisioning_profile" --embed "$mobile_provision"
+    env=$1
+    /usr/bin/xcrun -sdk "$sdk" PackageApplication -v "$project_app_dir" -o "$root_dir/$target$env.ipa" --sign "$provisioning_profile" --embed "$mobile_provision"
     [ $? != 0 ] && exit 1
 }
 
@@ -134,17 +161,23 @@ function main(){
     echo " * * * git clone & build * * *"
     git_build
 
-    echo " * * * build * * * "
+    echo " * * * build for prod * * * "
     build_app
+    packaging_app prod
+    
+    echo " * * * change sdk config for stage * * *"
+    config_host_stage
 
-    echo " * * * Packaging * * * "
-    packaging_app
+    echo " * * * build for stage * * * "
+    build_app
+    packaging_app stage
 
     echo " * * * Code sign * * *"
     code_sign
 
     echo "* * * Over The Air * * *"
-    build_ota_plist                  
+    build_ota_plist stage
+    build_ota_plist prod
 }
 
 main
