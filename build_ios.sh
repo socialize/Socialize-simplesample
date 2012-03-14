@@ -129,13 +129,13 @@ function main(){
     
 
     echo " * * * clean * * * "
-    #clean   
+    clean   
 
     echo " * * * git clone & build * * *"
-    #git_build
+    git_build
 
     echo " * * * build * * * "
-    #build_app
+    build_app
 
     echo " * * * Packaging * * * "
     packaging_app
