@@ -25,13 +25,16 @@ target="simplesample"
 sdk="iphoneos5.1"
 
 version=`cat $ios_repo/version`
-project_app_dir="$project_dir/build/Release-iphoneos/$target.app"
-mobile_provision="/usr/local/socialize/simple_sample_production.mobileprovision"
+prod_mobile_provision="/usr/local/socialize/simplesample_assets/simple_sample_production.mobileprovision"
+stage_mobile_provision="/usr/local/socialize/simplesample_assets/Simple_Sample_Stage_Server.mobileprovision"
 provisioning_profile="iPhone Distribution: pointabout"
 build_number="%env.BUILD_NUMBER%"
 
 display_image_name="Icon.png"
 full_size_image_name="Icon.png"
+
+email="champ.somsuk@getsocialize.com"
+
 
 function failed()
 {
@@ -113,7 +116,6 @@ function clean(){
 }
 
 function replace(){
-    echo $0 $1 $2 $3
     mv $3 $3_old
     sed -e "s@$1@$2@g" $3_old  > $3
     rm -f $3_old
@@ -141,17 +143,21 @@ function config_host_stage(){
 
 
 function build_app(){
-    cd $project_dir
     env=$1
-
+    cd $project_dir
+     
+    echo xcodebuild -target "$target$env" -sdk "$sdk"
     xcodebuild -target "$target$env"\
+        #-configuration "release"
         -sdk "$sdk"\
-        -configuration release
     [ $? != 0 ] && exit 1
 }
 
 function packaging_app(){
-    env=$1
+    mobile_provision=$1
+    env=$2
+    
+    echo /usr/bin/xcrun -sdk "$sdk" PackageApplication -v "$project_app_dir" -o "$root_dir/$target$env.ipa" --sign "$provisioning_profile" --embed "$mobile_provision" 
     /usr/bin/xcrun -sdk "$sdk" PackageApplication -v "$project_app_dir" -o "$root_dir/$target$env.ipa" --sign "$provisioning_profile" --embed "$mobile_provision"
     [ $? != 0 ] && exit 1
 }
@@ -164,31 +170,46 @@ function code_sign(){
 
 function main(){
 
-    echo " * * * clean * * * "
-    clean   
+    #echo " * * * clean * * * "
+    #clean   
 
-    echo " * * * git clone & build * * *"
-    git_build
-
-    echo " * * * build for prod * * * "
-    echo "building app for $env"
-    build_app
-    packaging_app
+    #echo " * * * git clone & build * * *"
+    #git_build   
     
-    echo " * * * change sdk config for stage * * *"
-    config_host_stage
+    #echo " * * * build for prod * * * "
+    #echo "building app for PROD"
+    #project_app_dir="$project_dir/build/Release-iphoneos/$target.app"
+    #build_app
+    #packaging_app $prod_mobile_provision
 
-    echo " * * * build for stage * * * "
-    build_app
-    packaging_app stage
+    #echo " * * * Code sign PROD * * *"
+    #code_sign
+     
+    #echo " * * * change sdk config for stage * * *"
+    #config_host_stage
 
-    echo " * * * Code sign * * *"
-    code_sign
+    #echo " * * * build for stage * * * "
+    #echo "building app for STAGE"
+    #project_app_dir=$project_dir/build/Release-iphoneos/$target"stage".app
+    #echo $project_app_dir   
+    #build_app stage
+    #packaging_app $stage_mobile_provision stage
 
-    echo "* * * Over The Air * * *"
-    build_ota_plist    
-    build_ota_plist stage
+    #echo " * * * Code sign * * *"
+    #code_sign
 
+    #echo "* * * Over The Air * * *"
+    #build_ota_plist    
+    #build_ota_plist stage
+    echo "HI"
+
+    
+}
+function usage(){
+    echo "./build_ios.sh <NeduildType> <NedBuildId>"
+}
+
+function distribute(){
     echo " * * * SDK VERSION * * *"
     echo $version
 
@@ -202,15 +223,17 @@ function main(){
     replace "%buildType%" $buildType "$root_dir/mailbody.txt"
     replace "%buildId%" $buildId "$root_dir/mailbody.txt"  
     replace "%version%" $version "$root_dir/mailbody.txt"
+    
+    echo "Sending email to $email"
+    mail -s "New Simple Sample Update" $email< mailbody.txt     
+}
 
-    mail -s "New Simple Sample Update" champ.somsuk@getsocialize.com < mailbody.txt
-}
-function usage(){
-    echo "./build_ios.sh <NeduildType> <NedBuildId>"
-}
-[ $# -lt 2 ] && usage && exit 1                     
+
 buildType=$1
 buildId=$2
 artifacts_url="http://ned.appmakr.com/guestAuth/repository/download/$buildType/$buildId:id"
+main
+[ $# == 2 ] && distribute
 
-main 
+
+
