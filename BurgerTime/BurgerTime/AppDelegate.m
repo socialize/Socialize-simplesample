@@ -13,12 +13,15 @@
 
 @synthesize window = _window;
 
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [Socialize storeConsumerKey:@"8d4afa04-0ab8-4173-891a-5027c8b827f6"];
     [Socialize storeConsumerSecret:@"25957111-3f42-413d-8d5b-a602c32680d5"];
     [Socialize storeFacebookAppId:@"193049117470843"];
-
+    [Socialize storeTwitterConsumerKey:@"PlOb10oxhUAy2CFuUo5Ew"];
+    [Socialize storeTwitterConsumerSecret:@"lBJQuDVCvK769tmMpzC3kSdr2gcOu0Q18ywPtTt2dk"];
     //your application specific code
     // Override point for customization after application launch.
     [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)]; 
