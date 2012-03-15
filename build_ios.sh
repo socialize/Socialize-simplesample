@@ -109,6 +109,7 @@ function clean(){
     rm -rfv simplesample*
     echo ">>> remove htmlpage"
     rm index.html
+    rm mailbody.txt
 }
 
 function replace(){
@@ -141,7 +142,9 @@ function config_host_stage(){
 
 function build_app(){
     cd $project_dir
-    xcodebuild -target "$target"\
+    env=$1
+
+    xcodebuild -target "$target$env"\
         -sdk "$sdk"\
         -configuration release
     [ $? != 0 ] && exit 1
@@ -168,8 +171,9 @@ function main(){
     git_build
 
     echo " * * * build for prod * * * "
+    echo "building app for $env"
     build_app
-    packaging_app prod
+    packaging_app
     
     echo " * * * change sdk config for stage * * *"
     config_host_stage
@@ -182,8 +186,8 @@ function main(){
     code_sign
 
     echo "* * * Over The Air * * *"
+    build_ota_plist    
     build_ota_plist stage
-    build_ota_plist prod    
 
     echo " * * * SDK VERSION * * *"
     echo $version
