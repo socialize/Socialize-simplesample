@@ -23,7 +23,6 @@ config_file="SocializeConfigurationInfo.plist"
 environment="stage"
 target="simplesample"
 sdk="iphoneos5.1"
-artifacts_url="http://ned.appmakr.com/guestAuth/repository/download/$buildType/$buildId:id"
 
 version=`cat $ios_repo/version`
 project_app_dir="$project_dir/build/Release-iphoneos/$target.app"
@@ -45,6 +44,9 @@ function build_ota_plist()
 {
     env=$1
     cd $root_dir
+
+    echo $artifacts_url/$target$env.ipa
+
     echo "Generating $target$env.plist"
     cat << EOF > $root_dir/$target$env.plist
 <?xml version="1.0" encoding="UTF-8"?>
@@ -181,7 +183,7 @@ function main(){
 
     echo "* * * Over The Air * * *"
     build_ota_plist stage
-    build_ota_plist prod      
+    build_ota_plist prod    
 
     echo " * * * SDK VERSION * * *"
     echo $version
@@ -204,5 +206,7 @@ function usage(){
 }
 [ $# -lt 2 ] && usage && exit 1                     
 buildType=$1
-buildId=$2  
+buildId=$2
+artifacts_url="http://ned.appmakr.com/guestAuth/repository/download/$buildType/$buildId:id"
+
 main 
