@@ -170,38 +170,37 @@ function code_sign(){
 
 function main(){
 
-    #echo " * * * clean * * * "
-    #clean   
+    echo " * * * clean * * * "
+    clean   
 
-    #echo " * * * git clone & build * * *"
-    #git_build   
+    echo " * * * git clone & build * * *"
+    git_build   
     
-    #echo " * * * build for prod * * * "
-    #echo "building app for PROD"
-    #project_app_dir="$project_dir/build/Release-iphoneos/$target.app"
-    #build_app
-    #packaging_app $prod_mobile_provision
+    echo " * * * build for prod * * * "
+    echo "building app for PROD"
+    project_app_dir="$project_dir/build/Release-iphoneos/$target.app"
+    build_app
+    packaging_app $prod_mobile_provision
 
-    #echo " * * * Code sign PROD * * *"
-    #code_sign
+    echo " * * * Code sign PROD * * *"
+    code_sign
      
-    #echo " * * * change sdk config for stage * * *"
-    #config_host_stage
+    echo " * * * change sdk config for stage * * *"
+    config_host_stage
 
-    #echo " * * * build for stage * * * "
-    #echo "building app for STAGE"
-    #project_app_dir=$project_dir/build/Release-iphoneos/$target"stage".app
-    #echo $project_app_dir   
-    #build_app stage
-    #packaging_app $stage_mobile_provision stage
+    echo " * * * build for stage * * * "
+    echo "building app for STAGE"
+    project_app_dir=$project_dir/build/Release-iphoneos/$target"stage".app
+    echo $project_app_dir   
+    build_app stage
+    packaging_app $stage_mobile_provision stage
 
-    #echo " * * * Code sign * * *"
-    #code_sign
+    echo " * * * Code sign * * *"
+    code_sign
 
-    #echo "* * * Over The Air * * *"
-    #build_ota_plist    
-    #build_ota_plist stage
-    echo "HI"
+    echo "* * * Over The Air * * *"
+    build_ota_plist    
+    build_ota_plist stage
 
     
 }
