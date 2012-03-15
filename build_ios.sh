@@ -23,7 +23,7 @@ config_file="SocializeConfigurationInfo.plist"
 environment="stage"
 target="simplesample"
 sdk="iphoneos5.1"
-artifacts_url="http://ned.appmakr.com/repository/download/$buildType/$buildId:id"
+artifacts_url="http://ned.appmakr.com/guestAuth/repository/download/$buildType/$buildId:id"
 
 version=`cat $ios_repo/version`
 project_app_dir="$project_dir/build/Release-iphoneos/$target.app"
@@ -191,7 +191,7 @@ function main(){
     replace "%buildType%" $buildType "$root_dir/index.html"
     replace "%buildId%" $buildId "$root_dir/index.html"
 
-    echo " * * * Sending mail * * * "
+    echo " * * * Sending E-mail * * * "
     cp $root_dir/mailtemplate.txt $root_dir/mailbody.txt
     replace "%buildType%" $buildType "$root_dir/mailbody.txt"
     replace "%buildId%" $buildId "$root_dir/mailbody.txt"  
