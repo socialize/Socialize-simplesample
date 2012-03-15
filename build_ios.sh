@@ -23,7 +23,9 @@ config_file="SocializeConfigurationInfo.plist"
 environment="stage"
 target="simplesample"
 sdk="iphoneos5.1"
+artifacts_url="http://ned.appmakr.com/repository/download/$buildType/$buildId:id"
 
+version=`cat $ios_repo/version`
 project_app_dir="$project_dir/build/Release-iphoneos/$target.app"
 mobile_provision="/usr/local/socialize/simple_sample_production.mobileprovision"
 provisioning_profile="iPhone Distribution: pointabout"
@@ -42,9 +44,7 @@ function failed()
 function build_ota_plist()
 {
     env=$1
-    artifacts_url="http://ned.appmakr.com/repository/download/$buildType/$buildId:id"
     cd $root_dir
-    version=`cat $ios_repo/version`
     echo "Generating $target$env.plist"
     cat << EOF > $root_dir/$target$env.plist
 <?xml version="1.0" encoding="UTF-8"?>
@@ -184,13 +184,20 @@ function main(){
     build_ota_plist prod      
 
     echo " * * * SDK VERSION * * *"
-    cd $root_dir
-    cat $ios_repo/version
+    echo $version
 
     echo " * * * GENERATE HTML * * *"
     cp $root_dir/template.html $root_dir/index.html
     replace "%buildType%" $buildType "$root_dir/index.html"
     replace "%buildId%" $buildId "$root_dir/index.html"
+
+    echo " * * * Sending mail * * * "
+    cp $root_dir/mailtemplate.txt $root_dir/mailbody.txt
+    replace "%buildType%" $buildType "$root_dir/mailbody.txt"
+    replace "%buildId%" $buildId "$root_dir/mailbody.txt"  
+    replace "%version%" $version "$root_dir/mailbody.txt"
+
+    mail -s "New Simple Sample Update" champ.somsuk@getsocialize.com < mailbody.txt
 }
 function usage(){
     echo "./build_ios.sh <NeduildType> <NedBuildId>"

@@ -1,0 +1,9 @@
+Hi Socializer,
+    The new version of socialize sdk is available on me(NED) please go and grab one.
+    
+    current version is %version%.
+
+    http://ned.appmakr.com/repository/download/%buildType%/%buildId%:id/index.html
+
+with love & care,
+NED
