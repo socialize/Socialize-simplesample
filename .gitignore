@@ -7,3 +7,4 @@ BurgerTime/build/*
 *.swo
 .DS_Store
 socialize-sdk-ios/
+index.html
