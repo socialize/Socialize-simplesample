@@ -105,9 +105,12 @@ function clean(){
     rm -rf $build_dir/*
     echo ">>> remove simplesample.ipa"
     rm -rfv simplesample*
+    echo ">>> remove htmlpage"
+    rm index.html
 }
 
 function replace(){
+    echo $0 $1 $2 $3
     mv $3 $3_old
     sed -e "s@$1@$2@g" $3_old  > $3
     rm -f $3_old
@@ -156,8 +159,6 @@ function code_sign(){
 
 function main(){
 
-
-
     echo " * * * clean * * * "
     clean   
 
@@ -184,9 +185,17 @@ function main(){
 
     echo " * * * SDK VERSION * * *"
     cd $root_dir
-    cat $ios_repo/version    
-}
+    cat $ios_repo/version
 
+    echo " * * * GENERATE HTML * * *"
+    cp $root_dir/template.html $root_dir/index.html
+    replace "%buildType%" $buildType "$root_dir/index.html"
+    replace "%buildId%" $buildId "$root_dir/index.html"
+}
+function usage(){
+    echo "./build_ios.sh <NeduildType> <NedBuildId>"
+}
+[ $# -lt 2 ] && usage && exit 1                     
 buildType=$1
 buildId=$2  
 main 
