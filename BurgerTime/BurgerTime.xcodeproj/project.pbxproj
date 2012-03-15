@@ -186,6 +186,8 @@
 		32B6F98B1510013000EA4D32 /* SocializeProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B6F8D81510013000EA4D32 /* SocializeProfileViewController.xib */; };
 		32B6F98C1510013000EA4D32 /* SocializeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B6F8D91510013000EA4D32 /* SocializeTableViewController.xib */; };
 		32B6F98D1510013000EA4D32 /* Socialize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B6F8DA1510013000EA4D32 /* Socialize.framework */; };
+		32F9FE7615117D8C00D5C496 /* SampleEntityLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FE7415117D8C00D5C496 /* SampleEntityLoader.m */; };
+		32F9FE7715117D8C00D5C496 /* SampleEntityLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F9FE7515117D8C00D5C496 /* SampleEntityLoader.xib */; };
 		AA7EFD7114CF727C0005ECF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFD7014CF727C0005ECF5 /* UIKit.framework */; };
 		AA7EFD7314CF727C0005ECF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFD7214CF727C0005ECF5 /* Foundation.framework */; };
 		AA7EFD7514CF727C0005ECF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFD7414CF727C0005ECF5 /* CoreGraphics.framework */; };
@@ -382,6 +384,9 @@
 		32B6F8D81510013000EA4D32 /* SocializeProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocializeProfileViewController.xib; sourceTree = "<group>"; };
 		32B6F8D91510013000EA4D32 /* SocializeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocializeTableViewController.xib; sourceTree = "<group>"; };
 		32B6F8DA1510013000EA4D32 /* Socialize.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Socialize.framework; sourceTree = "<group>"; };
+		32F9FE7315117D8C00D5C496 /* SampleEntityLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleEntityLoader.h; path = ../../../../../Downloads/SampleEntityLoader.h; sourceTree = "<group>"; };
+		32F9FE7415117D8C00D5C496 /* SampleEntityLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleEntityLoader.m; path = ../../../../../Downloads/SampleEntityLoader.m; sourceTree = "<group>"; };
+		32F9FE7515117D8C00D5C496 /* SampleEntityLoader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SampleEntityLoader.xib; path = ../../../../../Downloads/SampleEntityLoader.xib; sourceTree = "<group>"; };
 		AA7EFD6C14CF727C0005ECF5 /* simplesample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simplesample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7EFD7014CF727C0005ECF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA7EFD7214CF727C0005ECF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -653,6 +658,9 @@
 			isa = PBXGroup;
 			children = (
 				AA7EFD7F14CF727C0005ECF5 /* AppDelegate.h */,
+				32F9FE7315117D8C00D5C496 /* SampleEntityLoader.h */,
+				32F9FE7415117D8C00D5C496 /* SampleEntityLoader.m */,
+				32F9FE7515117D8C00D5C496 /* SampleEntityLoader.xib */,
 				AA7EFD8014CF727C0005ECF5 /* AppDelegate.m */,
 				AA7EFD8214CF727C0005ECF5 /* MainStoryboard_iPhone.storyboard */,
 				AA7EFD8514CF727C0005ECF5 /* MainStoryboard_iPad.storyboard */,
@@ -908,6 +916,7 @@
 				32B6F98A1510013000EA4D32 /* SocializeProfileEditViewController.xib in Resources */,
 				32B6F98B1510013000EA4D32 /* SocializeProfileViewController.xib in Resources */,
 				32B6F98C1510013000EA4D32 /* SocializeTableViewController.xib in Resources */,
+				32F9FE7715117D8C00D5C496 /* SampleEntityLoader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,6 +930,7 @@
 				AA7EFD7D14CF727C0005ECF5 /* main.m in Sources */,
 				AA7EFD8114CF727C0005ECF5 /* AppDelegate.m in Sources */,
 				AA7EFD8A14CF727C0005ECF5 /* ViewController.m in Sources */,
+				32F9FE7615117D8C00D5C496 /* SampleEntityLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Socialize/Socialize.h>
+#import "SampleEntityLoader.h"
 
 @implementation AppDelegate
 
@@ -27,9 +28,9 @@
     [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)]; 
 
     [Socialize setEntityLoaderBlock:^(UINavigationController *navigationController, id<SocializeEntity>entity) {
-        NSLog(@"Handle content being loaded from notficiation");
+        SampleEntityLoader *entityLoader = [[SampleEntityLoader alloc] initWithEntity:entity];
+        [navigationController pushViewController:entityLoader animated:YES];
     }];
-    
     return YES;
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {    
