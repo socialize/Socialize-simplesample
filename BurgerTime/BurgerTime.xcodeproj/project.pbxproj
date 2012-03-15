@@ -186,6 +186,8 @@
 		32B6F98B1510013000EA4D32 /* SocializeProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B6F8D81510013000EA4D32 /* SocializeProfileViewController.xib */; };
 		32B6F98C1510013000EA4D32 /* SocializeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B6F8D91510013000EA4D32 /* SocializeTableViewController.xib */; };
 		32B6F98D1510013000EA4D32 /* Socialize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B6F8DA1510013000EA4D32 /* Socialize.framework */; };
+		AA13C9E215128AF50074772D /* SocializeRichPushNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA13C9E015128AF50074772D /* SocializeRichPushNotificationViewController.xib */; };
+		AA13C9E315128AF50074772D /* SocializeTwitterAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA13C9E115128AF50074772D /* SocializeTwitterAuthViewController.xib */; };
 		AA7EFD7114CF727C0005ECF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFD7014CF727C0005ECF5 /* UIKit.framework */; };
 		AA7EFD7314CF727C0005ECF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFD7214CF727C0005ECF5 /* Foundation.framework */; };
 		AA7EFD7514CF727C0005ECF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFD7414CF727C0005ECF5 /* CoreGraphics.framework */; };
@@ -384,6 +386,8 @@
 		32B6F8D81510013000EA4D32 /* SocializeProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocializeProfileViewController.xib; sourceTree = "<group>"; };
 		32B6F8D91510013000EA4D32 /* SocializeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocializeTableViewController.xib; sourceTree = "<group>"; };
 		32B6F8DA1510013000EA4D32 /* Socialize.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Socialize.framework; sourceTree = "<group>"; };
+		AA13C9E015128AF50074772D /* SocializeRichPushNotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SocializeRichPushNotificationViewController.xib; path = ../Socialize.framework/Versions/A/Resources/SocializeRichPushNotificationViewController.xib; sourceTree = "<group>"; };
+		AA13C9E115128AF50074772D /* SocializeTwitterAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SocializeTwitterAuthViewController.xib; path = ../Socialize.framework/Versions/A/Resources/SocializeTwitterAuthViewController.xib; sourceTree = "<group>"; };
 		AA7EFD6C14CF727C0005ECF5 /* simplesample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simplesample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7EFD7014CF727C0005ECF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA7EFD7214CF727C0005ECF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -440,6 +444,8 @@
 		32B6F8271510013000EA4D32 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AA13C9E015128AF50074772D /* SocializeRichPushNotificationViewController.xib */,
+				AA13C9E115128AF50074772D /* SocializeTwitterAuthViewController.xib */,
 				32B6F8281510013000EA4D32 /* action-bar-bg.png */,
 				32B6F8291510013000EA4D32 /* action-bar-bg@2x.png */,
 				32B6F82A1510013000EA4D32 /* action-bar-button-black-hover.png */,
@@ -917,6 +923,8 @@
 				32B6F98B1510013000EA4D32 /* SocializeProfileViewController.xib in Resources */,
 				32B6F98C1510013000EA4D32 /* SocializeTableViewController.xib in Resources */,
 				AA7FC35715118047008D4102 /* SampleEntityLoader.xib in Resources */,
+				AA13C9E215128AF50074772D /* SocializeRichPushNotificationViewController.xib in Resources */,
+				AA13C9E315128AF50074772D /* SocializeTwitterAuthViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
