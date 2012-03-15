@@ -42,12 +42,11 @@ function failed()
 function build_ota_plist()
 {
     env=$1
-    buildType=$2
-    buildId=$3
-    artifacts_url="http://ned.appmakr.com/repository/download/%system.teamcity.buildType.id%/%teamcity.build.id%:id"
-
-    echo "Generating $target$env.app.plist"
-    cat << EOF > $root_dir/$target$env.app.plist
+    artifacts_url="http://ned.appmakr.com/repository/download/$buildType/$buildId:id"
+    cd $root_dir
+    version=`cat $ios_repo/version`
+    echo "Generating $target$env.plist"
+    cat << EOF > $root_dir/$target$env.plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -83,9 +82,9 @@ function build_ota_plist()
       <key>metadata</key>
       <dict>
         <key>bundle-identifier</key>
-        <string>$buildId</string>
+        <string>com.getsocialize.simplesample</string>
         <key>bundle-version</key>
-        <string>$buildType $buildId</string>
+        <string>$version</string>
         <key>kind</key>
         <string>software</string>
         <key>subtitle</key>
@@ -156,6 +155,9 @@ function code_sign(){
 
 
 function main(){
+
+
+
     echo " * * * clean * * * "
     clean   
 
@@ -178,7 +180,13 @@ function main(){
 
     echo "* * * Over The Air * * *"
     build_ota_plist stage
-    build_ota_plist prod
+    build_ota_plist prod      
+
+    echo " * * * SDK VERSION * * *"
+    cd $root_dir
+    cat $ios_repo/version    
 }
 
-main
+buildType=$1
+buildId=$2  
+main 

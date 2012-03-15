@@ -1,6 +1,6 @@
 .DS_Store
 simplesample*.ipa
-simplesample*.app.plist
+simplesample*.plist
 simple_sample_production.mobileprovision
 BurgerTime/build/*
 *.swp
