@@ -1,9 +1,16 @@
 Hi Socializer,
-    The new version of socialize sdk is available on me(NED) please go and grab one.
+    The new version of socialize IOS sdk is available on me(NED) please go and grab one.
     
     current version is %version%.
 
+    For over the air installation click on here:
     http://ned.appmakr.com/repository/download/%buildType%/%buildId%:id/index.html
+
+    for download ipa file and install on itune download here
+    STAGE:
+    http://ned.appmakr.com/guestAuth/repository/download/%buildType%/%buildId%:id/simplesamplestage.ipa
+    PROD:
+    http://ned.appmakr.com/guestAuth/repository/download/%buildType%/%buildId%:id/simplesampleprod.ipa
 
 with love & care,
 NED
