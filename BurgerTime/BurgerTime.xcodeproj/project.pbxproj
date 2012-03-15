@@ -607,8 +607,8 @@
 		AA7FC35315118047008D4102 /* SampleEntityLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleEntityLoader.h; sourceTree = "<group>"; };
 		AA7FC35415118047008D4102 /* SampleEntityLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleEntityLoader.m; sourceTree = "<group>"; };
 		AA7FC35515118047008D4102 /* SampleEntityLoader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleEntityLoader.xib; sourceTree = "<group>"; };
-		AACED1D8151291A3006C42A7 /* simplesample copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simplesample copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AACED1DA151291A3006C42A7 /* simplesample-prod-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "simplesample-prod-Info.plist"; path = "/Users/griswold/ios/Socialize-simplesample/BurgerTime/simplesample-prod-Info.plist"; sourceTree = "<absolute>"; };
+		AACED1D8151291A3006C42A7 /* simplesamplestage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simplesamplestage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AACED1DA151291A3006C42A7 /* simplesamplestage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "simplesamplestage-Info.plist"; path = "/Users/griswold/ios/Socialize-simplesample/BurgerTime/simplesamplestage-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -852,7 +852,7 @@
 				AA7EFD7614CF727C0005ECF5 /* BurgerTime */,
 				AA7EFD6F14CF727C0005ECF5 /* Frameworks */,
 				AA7EFD6D14CF727C0005ECF5 /* Products */,
-				AACED1DA151291A3006C42A7 /* simplesample-prod-Info.plist */,
+				AACED1DA151291A3006C42A7 /* simplesamplestage-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -860,7 +860,7 @@
 			isa = PBXGroup;
 			children = (
 				AA7EFD6C14CF727C0005ECF5 /* simplesample.app */,
-				AACED1D8151291A3006C42A7 /* simplesample copy.app */,
+				AACED1D8151291A3006C42A7 /* simplesamplestage.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -908,9 +908,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AA7EFD6B14CF727C0005ECF5 /* simplesample-stage */ = {
+		AA7EFD6B14CF727C0005ECF5 /* simplesample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA7EFD8D14CF727C0005ECF5 /* Build configuration list for PBXNativeTarget "simplesample-stage" */;
+			buildConfigurationList = AA7EFD8D14CF727C0005ECF5 /* Build configuration list for PBXNativeTarget "simplesample" */;
 			buildPhases = (
 				AA7EFD6814CF727C0005ECF5 /* Sources */,
 				AA7EFD6914CF727C0005ECF5 /* Frameworks */,
@@ -920,14 +920,14 @@
 			);
 			dependencies = (
 			);
-			name = "simplesample-stage";
+			name = simplesample;
 			productName = BurgerTime;
 			productReference = AA7EFD6C14CF727C0005ECF5 /* simplesample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AACED10C151291A3006C42A7 /* simplesample-prod */ = {
+		AACED10C151291A3006C42A7 /* simplesamplestage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AACED1D5151291A3006C42A7 /* Build configuration list for PBXNativeTarget "simplesample-prod" */;
+			buildConfigurationList = AACED1D5151291A3006C42A7 /* Build configuration list for PBXNativeTarget "simplesamplestage" */;
 			buildPhases = (
 				AACED10D151291A3006C42A7 /* Sources */,
 				AACED112151291A3006C42A7 /* Frameworks */,
@@ -937,9 +937,9 @@
 			);
 			dependencies = (
 			);
-			name = "simplesample-prod";
+			name = simplesamplestage;
 			productName = BurgerTime;
-			productReference = AACED1D8151291A3006C42A7 /* simplesample copy.app */;
+			productReference = AACED1D8151291A3006C42A7 /* simplesamplestage.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -963,8 +963,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AA7EFD6B14CF727C0005ECF5 /* simplesample-stage */,
-				AACED10C151291A3006C42A7 /* simplesample-prod */,
+				AA7EFD6B14CF727C0005ECF5 /* simplesample */,
+				AACED10C151291A3006C42A7 /* simplesamplestage */,
 			);
 		};
 /* End PBXProject section */
@@ -1511,12 +1511,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BurgerTime/BurgerTime-Prefix.pch";
-				INFOPLIST_FILE = "simplesample-prod-Info.plist";
+				INFOPLIST_FILE = "simplesamplestage-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "simplesample copy";
+				PRODUCT_NAME = simplesamplestage;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1533,12 +1533,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BurgerTime/BurgerTime-Prefix.pch";
-				INFOPLIST_FILE = "simplesample-prod-Info.plist";
+				INFOPLIST_FILE = "simplesamplestage-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "simplesample copy";
+				PRODUCT_NAME = simplesamplestage;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1556,7 +1556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA7EFD8D14CF727C0005ECF5 /* Build configuration list for PBXNativeTarget "simplesample-stage" */ = {
+		AA7EFD8D14CF727C0005ECF5 /* Build configuration list for PBXNativeTarget "simplesample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA7EFD8E14CF727C0005ECF5 /* Debug */,
@@ -1565,7 +1565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AACED1D5151291A3006C42A7 /* Build configuration list for PBXNativeTarget "simplesample-prod" */ = {
+		AACED1D5151291A3006C42A7 /* Build configuration list for PBXNativeTarget "simplesamplestage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AACED1D6151291A3006C42A7 /* Debug */,
