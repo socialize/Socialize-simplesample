@@ -233,6 +233,3 @@ buildId=$2
 artifacts_url="http://ned.appmakr.com/guestAuth/repository/download/$buildType/$buildId:id"
 main
 [ $# == 2 ] && distribute
-
-
-
