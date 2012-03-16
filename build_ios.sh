@@ -33,7 +33,8 @@ build_number="%env.BUILD_NUMBER%"
 display_image_name="Icon.png"
 full_size_image_name="Icon.png"
 
-email="champ.somsuk@getsocialize.com,Nate.Griswold@getsocialize.com,build@getsocialize.com"
+email="champ.somsuk@getsocialize.com"
+#,Nate.Griswold@getsocialize.com,build@getsocialize.com"
 
 
 function failed()
@@ -87,7 +88,7 @@ function build_ota_plist()
       <key>metadata</key>
       <dict>
         <key>bundle-identifier</key>
-        <string>com.getsocialize.simplesample</string>
+        <string>com.getsocialize.$target$env</string>
         <key>bundle-version</key>
         <string>$version</string>
         <key>kind</key>
@@ -216,6 +217,7 @@ function distribute(){
     cp $root_dir/template.html $root_dir/index.html
     replace "%buildType%" $buildType "$root_dir/index.html"
     replace "%buildId%" $buildId "$root_dir/index.html"
+    replace "%version%" $version "$root_dir/index.html"
 
     echo " * * * Sending E-mail * * * "
     cp $root_dir/mailtemplate.txt $root_dir/mailbody.txt
@@ -231,5 +233,5 @@ function distribute(){
 buildType=$1
 buildId=$2
 artifacts_url="http://ned.appmakr.com/guestAuth/repository/download/$buildType/$buildId:id"
-main
+#main
 [ $# == 2 ] && distribute
