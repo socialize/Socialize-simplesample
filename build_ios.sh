@@ -96,7 +96,7 @@ function build_ota_plist()
         <key>subtitle</key>
         <string>$env</string>
         <key>title</key>
-        <string>$project_name</string>
+        <string>$project_name $env</string>
       </dict>
     </dict>
   </array>
