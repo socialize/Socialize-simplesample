@@ -129,7 +129,7 @@ function git_build(){
     else
         $git_clone && cd $ios_repo && git submodule update --init
     fi
-    #make package
+    make package
 }
 function config_host_stage(){
     cd $root_dir/$ios_repo/$config_path
@@ -137,9 +137,6 @@ function config_host_stage(){
     replace $old_redirect_host $redirect_host $config_file
     replace $old_https_host $https_host $config_file
     replace $old_http_host $http_host $config_file
-    #sed -e "s@$old_redirect_host@$redirect_host@g" $config_file  > $config_file
-    #sed -e "s@$old_https_host@$https_host@g" $config_file > $config_file
-    #sed -e "s@$old_http_host@$http_host@g" $config_file > $config_file
 }
 
 
@@ -177,27 +174,27 @@ function main(){
     echo " * * * git clone & build * * *"
     git_build   
     
-    #echo " * * * build for prod * * * "
-    #echo "building app for PROD"
-    #project_app_dir="$project_dir/build/Release-iphoneos/$target.app"
-    #build_app
-    #packaging_app $prod_mobile_provision
+    echo " * * * build for prod * * * "
+    echo "building app for PROD"
+    project_app_dir="$project_dir/build/Release-iphoneos/$target.app"
+    build_app
+    packaging_app $prod_mobile_provision
 
-    #echo " * * * Code sign PROD * * *"
-    #code_sign
+    echo " * * * Code sign PROD * * *"
+    code_sign
      
-    #echo " * * * change sdk config for stage * * *"
-    #config_host_stage
+    echo " * * * change sdk config for stage * * *"
+    config_host_stage
 
-    #echo " * * * build for stage * * * "
-    #echo "building app for STAGE"
-    #project_app_dir=$project_dir/build/Release-iphoneos/$target"stage".app
-    #echo $project_app_dir   
-    #build_app stage
-    #packaging_app $stage_mobile_provision stage
+    echo " * * * build for stage * * * "
+    echo "building app for STAGE"
+    project_app_dir=$project_dir/build/Release-iphoneos/$target"stage".app
+    echo $project_app_dir   
+    build_app stage
+    packaging_app $stage_mobile_provision stage
 
-    #echo " * * * Code sign * * *"
-    #code_sign
+    echo " * * * Code sign * * *"
+    code_sign
 
     echo "* * * Over The Air * * *"
     build_ota_plist    
