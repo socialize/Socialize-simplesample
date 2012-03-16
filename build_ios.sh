@@ -32,7 +32,7 @@ build_number="%env.BUILD_NUMBER%"
 display_image_name="Icon.png"
 full_size_image_name="Icon.png"
 
-email="champ.somsuk@getsocialize.com,Nate.Griswold@getsocialize.com,build@getsocialize.com"
+email="champ.somsuk@getsocialize.com,Nate.Griswold@getsocialize.com,builds@getsocialize.com"
 
 
 function failed()
