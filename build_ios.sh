@@ -24,7 +24,6 @@ environment="stage"
 target="simplesample"
 sdk="iphoneos5.1"
 
-version=`cat $ios_repo/version`
 prod_mobile_provision="/usr/local/socialize/simplesample_assets/simple_sample_production.mobileprovision"
 stage_mobile_provision="/usr/local/socialize/simplesample_assets/Simple_Sample_Stage_Server.mobileprovision"
 provisioning_profile="iPhone Distribution: pointabout"
@@ -48,6 +47,7 @@ function build_ota_plist()
 {
     env=$1
     cd $root_dir
+    version=`cat $ios_repo/version`
 
     echo $artifacts_url/$target$env.ipa
 
@@ -129,7 +129,7 @@ function git_build(){
     else
         $git_clone && cd $ios_repo && git submodule update --init
     fi
-    make package
+    #make package
 }
 function config_host_stage(){
     cd $root_dir/$ios_repo/$config_path
@@ -211,6 +211,7 @@ function usage(){
 
 function distribute(){
     echo " * * * SDK VERSION * * *"
+    version=`cat $ios_repo/version`
     echo $version
 
     echo " * * * GENERATE HTML * * *"
