@@ -1459,6 +1459,10 @@
 		AA7EFD8E14CF727C0005ECF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pointabout";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1468,6 +1472,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BurgerTime/BurgerTime-Prefix.pch";
 				INFOPLIST_FILE = "BurgerTime/BurgerTime-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1481,6 +1486,10 @@
 		AA7EFD8F14CF727C0005ECF5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pointabout";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1490,6 +1499,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BurgerTime/BurgerTime-Prefix.pch";
 				INFOPLIST_FILE = "BurgerTime/BurgerTime-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
