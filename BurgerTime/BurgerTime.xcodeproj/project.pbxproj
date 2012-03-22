@@ -397,6 +397,8 @@
 		AACED1D2151291A3006C42A7 /* SampleEntityLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7FC35515118047008D4102 /* SampleEntityLoader.xib */; };
 		AACED1D3151291A3006C42A7 /* SocializeRichPushNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA13C9E015128AF50074772D /* SocializeRichPushNotificationViewController.xib */; };
 		AACED1D4151291A3006C42A7 /* SocializeTwitterAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA13C9E115128AF50074772D /* SocializeTwitterAuthViewController.xib */; };
+		AAEE36D5151AC89A00BFAB7D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEE36D4151AC89A00BFAB7D /* ViewController.xib */; };
+		AAEE36D6151AC89A00BFAB7D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEE36D4151AC89A00BFAB7D /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -603,6 +605,7 @@
 		AA7FC35515118047008D4102 /* SampleEntityLoader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleEntityLoader.xib; sourceTree = "<group>"; };
 		AACED1D8151291A3006C42A7 /* simplesamplestage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simplesamplestage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACED1DA151291A3006C42A7 /* simplesamplestage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "simplesamplestage-Info.plist"; path = "/Users/griswold/ios/Socialize-simplesample/BurgerTime/simplesamplestage-Info.plist"; sourceTree = "<absolute>"; };
+		AAEE36D4151AC89A00BFAB7D /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -880,6 +883,7 @@
 				AA7EFD8014CF727C0005ECF5 /* AppDelegate.m */,
 				AA7EFD8814CF727C0005ECF5 /* ViewController.h */,
 				AA7EFD8914CF727C0005ECF5 /* ViewController.m */,
+				AAEE36D4151AC89A00BFAB7D /* ViewController.xib */,
 				AA7EFD7714CF727C0005ECF5 /* Supporting Files */,
 			);
 			path = BurgerTime;
@@ -1149,6 +1153,7 @@
 				AA7FC35715118047008D4102 /* SampleEntityLoader.xib in Resources */,
 				AA13C9E215128AF50074772D /* SocializeRichPushNotificationViewController.xib in Resources */,
 				AA13C9E315128AF50074772D /* SocializeTwitterAuthViewController.xib in Resources */,
+				AAEE36D5151AC89A00BFAB7D /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1339,6 +1344,7 @@
 				AACED1D2151291A3006C42A7 /* SampleEntityLoader.xib in Resources */,
 				AACED1D3151291A3006C42A7 /* SocializeRichPushNotificationViewController.xib in Resources */,
 				AACED1D4151291A3006C42A7 /* SocializeTwitterAuthViewController.xib in Resources */,
+				AAEE36D6151AC89A00BFAB7D /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1485,6 +1491,10 @@
 		AACED1D6151291A3006C42A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pointabout";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1508,6 +1518,10 @@
 		AACED1D7151291A3006C42A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: pointabout";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -13,7 +13,7 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-
+@synthesize viewController = _viewController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -31,6 +31,13 @@
         SampleEntityLoader *entityLoader = [[SampleEntityLoader alloc] initWithEntity:entity];
         [navigationController pushViewController:entityLoader animated:YES];
     }];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    self.viewController = [[ViewController alloc] init];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {    
