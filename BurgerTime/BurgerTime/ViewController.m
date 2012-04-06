@@ -65,4 +65,9 @@
     }
 }
 
+- (IBAction)notificationsButtonPressed:(id)sender {
+    UIViewController *comments = [SocializeCommentsTableViewController socializeCommentsTableViewControllerForEntity:@"notifications"];
+    [self presentModalViewController:comments animated:YES];
+}
+
 @end

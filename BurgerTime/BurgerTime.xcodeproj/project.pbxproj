@@ -188,6 +188,12 @@
 		32B6F98D1510013000EA4D32 /* Socialize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B6F8DA1510013000EA4D32 /* Socialize.framework */; };
 		AA13C9E215128AF50074772D /* SocializeRichPushNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA13C9E015128AF50074772D /* SocializeRichPushNotificationViewController.xib */; };
 		AA13C9E315128AF50074772D /* SocializeTwitterAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA13C9E115128AF50074772D /* SocializeTwitterAuthViewController.xib */; };
+		AA31EDF6152F8D3D006C6308 /* socialize_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AA31EDF5152F8D3D006C6308 /* socialize_logo.png */; };
+		AA31EDF7152F8D3D006C6308 /* socialize_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AA31EDF5152F8D3D006C6308 /* socialize_logo.png */; };
+		AA31EDFB152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA31EDF9152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon.png */; };
+		AA31EDFC152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA31EDF9152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon.png */; };
+		AA31EDFD152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA31EDFA152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon@2x.png */; };
+		AA31EDFE152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA31EDFA152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon@2x.png */; };
 		AA7EFD7114CF727C0005ECF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFD7014CF727C0005ECF5 /* UIKit.framework */; };
 		AA7EFD7314CF727C0005ECF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFD7214CF727C0005ECF5 /* Foundation.framework */; };
 		AA7EFD7514CF727C0005ECF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFD7414CF727C0005ECF5 /* CoreGraphics.framework */; };
@@ -583,6 +589,9 @@
 		32B6F8DA1510013000EA4D32 /* Socialize.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Socialize.framework; sourceTree = "<group>"; };
 		AA13C9E015128AF50074772D /* SocializeRichPushNotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SocializeRichPushNotificationViewController.xib; path = ../Socialize.framework/Versions/A/Resources/SocializeRichPushNotificationViewController.xib; sourceTree = "<group>"; };
 		AA13C9E115128AF50074772D /* SocializeTwitterAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SocializeTwitterAuthViewController.xib; path = ../Socialize.framework/Versions/A/Resources/SocializeTwitterAuthViewController.xib; sourceTree = "<group>"; };
+		AA31EDF5152F8D3D006C6308 /* socialize_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = socialize_logo.png; sourceTree = "<group>"; };
+		AA31EDF9152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "socialize-iphone-subcribe-notification-icon.png"; sourceTree = "<group>"; };
+		AA31EDFA152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "socialize-iphone-subcribe-notification-icon@2x.png"; sourceTree = "<group>"; };
 		AA7EFD6C14CF727C0005ECF5 /* simplesample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simplesample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7EFD7014CF727C0005ECF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA7EFD7214CF727C0005ECF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -876,6 +885,9 @@
 		AA7EFD7614CF727C0005ECF5 /* BurgerTime */ = {
 			isa = PBXGroup;
 			children = (
+				AA31EDF9152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon.png */,
+				AA31EDFA152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon@2x.png */,
+				AA31EDF5152F8D3D006C6308 /* socialize_logo.png */,
 				AA7FC35315118047008D4102 /* SampleEntityLoader.h */,
 				AA7FC35415118047008D4102 /* SampleEntityLoader.m */,
 				AA7FC35515118047008D4102 /* SampleEntityLoader.xib */,
@@ -1154,6 +1166,9 @@
 				AA13C9E215128AF50074772D /* SocializeRichPushNotificationViewController.xib in Resources */,
 				AA13C9E315128AF50074772D /* SocializeTwitterAuthViewController.xib in Resources */,
 				AAEE36D5151AC89A00BFAB7D /* ViewController.xib in Resources */,
+				AA31EDF6152F8D3D006C6308 /* socialize_logo.png in Resources */,
+				AA31EDFB152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon.png in Resources */,
+				AA31EDFD152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1345,6 +1360,9 @@
 				AACED1D3151291A3006C42A7 /* SocializeRichPushNotificationViewController.xib in Resources */,
 				AACED1D4151291A3006C42A7 /* SocializeTwitterAuthViewController.xib in Resources */,
 				AAEE36D6151AC89A00BFAB7D /* ViewController.xib in Resources */,
+				AA31EDF7152F8D3D006C6308 /* socialize_logo.png in Resources */,
+				AA31EDFC152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon.png in Resources */,
+				AA31EDFE152F8D8C006C6308 /* socialize-iphone-subcribe-notification-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

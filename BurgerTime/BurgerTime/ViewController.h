@@ -12,6 +12,9 @@
 
 @interface ViewController : UIViewController
 @property (nonatomic, retain) SocializeActionBar *actionBar;
+
+- (IBAction)notificationsButtonPressed:(id)sender;
+
 @end
 
 
