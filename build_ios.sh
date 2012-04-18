@@ -8,8 +8,11 @@ old_http_host="http://api.getsocialize.com"
 http_host="http://stage.api.getsocialize.com"
 consumer_key="8d4afa04-0ab8-4173-891a-5027c8b827f6"
 consumer_secret="25957111-3f42-413d-8d5b-a602c32680d5"
-facebook_app_id="193049117470843"
+stage_consumer_key="bc152bdf-1497-447a-9e6b-758d4856758f"
+stage_consumer_secret="79c544ca-fbe1-4da4-8bf4-0decedc24e65"
 
+facebook_app_id="193049117470843"
+facebook_app_id_stage="210343369066525"
 ios_repo="socialize-sdk-ios"
 git_clone="git clone git@github.com:socialize/socialize-sdk-ios.git $ios_repo"
 
@@ -136,6 +139,7 @@ function config_host_stage(){
     replace $old_redirect_host $redirect_host $config_file
     replace $old_https_host $https_host $config_file
     replace $old_http_host $http_host $config_file
+    
 }
 
 
