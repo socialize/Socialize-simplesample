@@ -80,7 +80,7 @@ function config_local_properties(){
     rm -rvf local.properties
     echo "set up local.properties $build_target"
     cat <<EOF >local.properties
-sdk.dir=/usr/local/android/android-sdk-mac_86/
+sdk.dir=$ANDROID_HOME
 out.dir=$build_target
 EOF
 }
