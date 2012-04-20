@@ -38,8 +38,11 @@ function failed()
 }
 
 function replace(){
+    if [ $# -ne 3] ; then
+        exit 1
+    fi
     mv $3 $3_old
-    sed -e "s@$1@$2@g" $3_old  > $3
+    sed -e "s&$1&$2&g" $3_old  > $3
     rm -f $3_old
 }    
 
@@ -55,7 +58,7 @@ function git_build_android(){
 
     cd $root_dir
     if [ -d $and_repo ]; then
-        cd $and_repo && git pull && git submodule update
+        cd $and_repo && git reset --hard HEAD && git pull && git submodule update
     else
         $and_git_clone && cd $and_repo && git submodule update --init
     fi
@@ -118,7 +121,7 @@ EOF
 
 function config_stage(){
     echo "go to android manifest"
-    cd project_dir
+    cd $project_dir
     menifest_file=AndroidManifest.xml
     replace com.socialize.sample.simple com.socialize.sample.simple.stage $menifest_file
     replace @string/app_name StageSimpleSample $menifest_file
