@@ -52,7 +52,8 @@ function clean(){
     rm -rfv $stage_build_dir
     echo ">>> remove prod build folder"
     rm -rfv $prod_build_dir
-    
+    echo ">>> remove public path on NED"
+    rm -v /opt/TeamCity/webapps/ROOT/socialize_builds/*
 }
 
 function git_build_android(){
@@ -155,8 +156,8 @@ function usage(){
 }
 
 function prepare_apk(){
-    mv $stage_build_dir/socialize-simple-sample-release.apk /opt/TeamCity/webapps/ROOT/socialize_builds/
-    mv $prod_build_dir/socialize-simple-sample-release.apk /opt/TeamCity/webapps/ROOT/socialize_builds/
+    mv $stage_build_dir/socialize-simple-sample-release.apk /opt/TeamCity/webapps/ROOT/socialize_builds/socialize-simple-sample-release-stage.apk
+    mv $prod_build_dir/socialize-simple-sample-release.apk /opt/TeamCity/webapps/ROOT/socialize_builds/socialize-simple-sample-release-prod.apk
     exit 0
 }
 
