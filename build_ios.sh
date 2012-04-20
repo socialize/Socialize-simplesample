@@ -219,20 +219,20 @@ function distribute(){
     android_v=`cat $build_path/android_version`
     echo android version is $android_v
 
-    replace "%android_v%" $android_v "$root_dir/index.html"
-    replace "%android_v%" $android_v "$root_dir/mailbody.txt"
-    
+   
     echo " * * * GENERATE HTML * * *"
     cp $root_dir/template.html $root_dir/index.html
     replace "%buildType%" $buildType "$root_dir/index.html"
     replace "%buildId%" $buildId "$root_dir/index.html"
     replace "%version%" $version "$root_dir/index.html"
-
+    replace "%android_v%" $android_v "$root_dir/index.html"
+ 
     echo " * * * Sending E-mail * * * "
     cp $root_dir/mailtemplate.txt $root_dir/mailbody.txt
     replace "%buildType%" $buildType "$root_dir/mailbody.txt"
     replace "%buildId%" $buildId "$root_dir/mailbody.txt"  
     replace "%version%" $version "$root_dir/mailbody.txt"
+    replace "%android_v%" $android_v "$root_dir/mailbody.txt"
     
     echo "Sending email to $email"
     mail -s "New Simple Sample Update" $email< mailbody.txt     
