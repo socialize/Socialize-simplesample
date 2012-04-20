@@ -143,6 +143,8 @@ function main(){
     echo " * * * build for stage * * * "
     build_app stage
 
+    exit 0
+
 }
 function usage(){
     echo "./build_and.sh"
