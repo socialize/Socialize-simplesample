@@ -146,6 +146,7 @@ function main(){
     echo " * * * build for stage * * * "
     build_app stage
 
+    prepare_apk
     exit 0
 
 }
@@ -153,26 +154,13 @@ function usage(){
     echo "./build_and.sh"
 }
 
-function distribute(){
-    echo " * * * SDK VERSION * * *"
-    version=`cat $ios_repo/version`
-    echo $version
-
-    echo " * * * GENERATE HTML * * *"
-    cp $root_dir/template.html $root_dir/index.html
-    replace "%buildType%" $buildType "$root_dir/index.html"
-    replace "%buildId%" $buildId "$root_dir/index.html"
-    replace "%version%" $version "$root_dir/index.html"
-
-    echo " * * * Sending E-mail * * * "
-    cp $root_dir/mailtemplate.txt $root_dir/mailbody.txt
-    replace "%buildType%" $buildType "$root_dir/mailbody.txt"
-    replace "%buildId%" $buildId "$root_dir/mailbody.txt"  
-    replace "%version%" $version "$root_dir/mailbody.txt"
-    
-    echo "Sending email to $email"
-    mail -s "New Simple Sample Update" $email< mailbody.txt     
+function prepare_apk(){
+    mv $stage_build_dir/socialize-simple-sample-release.apk /opt/TeamCity/webapps/ROOT/socialize_builds/
+    mv $prod_build_dir/socialize-simple-sample-release.apk /opt/TeamCity/webapps/ROOT/socialize_builds/
+    exit 0
 }
+
+
 
 
 buildType=$1
