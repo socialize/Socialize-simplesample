@@ -10,6 +10,8 @@ consumer_key="8d4afa04-0ab8-4173-891a-5027c8b827f6"
 consumer_secret="25957111-3f42-413d-8d5b-a602c32680d5"
 stage_consumer_key="bc152bdf-1497-447a-9e6b-758d4856758f"
 stage_consumer_secret="79c544ca-fbe1-4da4-8bf4-0decedc24e65"
+android_build_folder="android_build"
+
 
 facebook_app_id="193049117470843"
 stage_facebook_app_id="210343369066525"
@@ -21,8 +23,8 @@ project_name="simple-sample"
 root_dir=`pwd`
 project_dir=$root_dir/$and_repo/$project_name
 assets_dir=$project_dir/assets
-stage_build_dir=$root_dir/build_stage
-prod_build_dir=$root_dir/build_prod
+stage_build_dir=$root_dir/$android_build_folder/build_stage
+prod_build_dir=$root_dir/$android_build_folder/build_prod
 
 display_image_name="Icon.png"
 full_size_image_name="Icon.png"
@@ -50,6 +52,7 @@ function clean(){
     rm -rfv $stage_build_dir
     echo ">>> remove prod build folder"
     rm -rfv $prod_build_dir
+    
 }
 
 function git_build_android(){
