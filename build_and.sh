@@ -78,6 +78,8 @@ function build_app(){
     echo " * * * RUNNING ANT SCRIPT * * * "    
     cd $project_dir
     ant release
+    [ $? == 1 ] && exit 1
+    
 
 }
 
