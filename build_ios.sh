@@ -214,6 +214,12 @@ function distribute(){
     version=`cat $ios_repo/version`
     echo $version
 
+    echo " * * * ANDROID * * *"
+    build_path=/opt/TeamCity/webapps/ROOT/socialize_builds
+    android_v=`cat $build_path/android_version`
+    replace "%android_v%" $android_v "$root_dir/index.html"
+    replace "%android_v%" $android_v "$root_dir/mailbody.txt"
+    
     echo " * * * GENERATE HTML * * *"
     cp $root_dir/template.html $root_dir/index.html
     replace "%buildType%" $buildType "$root_dir/index.html"

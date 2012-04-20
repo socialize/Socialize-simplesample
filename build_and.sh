@@ -156,8 +156,11 @@ function usage(){
 }
 
 function prepare_apk(){
-    mv $stage_build_dir/socialize-simple-sample-release.apk /opt/TeamCity/webapps/ROOT/socialize_builds/socialize-simple-sample-release-stage.apk
-    mv $prod_build_dir/socialize-simple-sample-release.apk /opt/TeamCity/webapps/ROOT/socialize_builds/socialize-simple-sample-release-prod.apk
+    build_path=/opt/TeamCity/webapps/ROOT/socialize_builds
+    cd $project_dir/libs 
+    echo `find -f socialize-*jar` > $build_path/android_version
+    mv $stage_build_dir/socialize-simple-sample-release.apk $build_path/socialize-simple-sample-release-stage.apk
+    mv $prod_build_dir/socialize-simple-sample-release.apk $build_path/socialize-simple-sample-release-prod.apk
     exit 0
 }
 
