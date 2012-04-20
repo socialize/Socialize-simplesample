@@ -37,10 +37,8 @@ function failed()
     exit 1
 }
 
-function replace(){
-    if [ $# -ne 3] ; then
-        exit 1
-    fi
+function replace()
+{
     mv $3 $3_old
     sed -e "s&$1&$2&g" $3_old  > $3
     rm -f $3_old
