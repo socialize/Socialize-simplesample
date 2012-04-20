@@ -127,7 +127,7 @@ function config_stage(){
     echo "go to android manifest"
     cd $project_dir
     menifest_file=AndroidManifest.xml
-    replace com.socialize.sample.simple com.socialize.sample.simple.stage $menifest_file
+    replace '"com.socialize.sample.simple"' '"com.socialize.sample.simple.stage"' $menifest_file
     replace @string/app_name StageSimpleSample $menifest_file
 }
 
