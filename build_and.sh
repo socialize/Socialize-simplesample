@@ -14,7 +14,7 @@ stage_consumer_secret="79c544ca-fbe1-4da4-8bf4-0decedc24e65"
 facebook_app_id="193049117470843"
 stage_facebook_app_id="210343369066525"
 and_repo="socialize-sdk-android"
-and_git_clone="git clone git@github.com:socialize/socialize-sdk-android.git $and_repo"
+and_git_clone="git clone -b develop git@github.com:socialize/socialize-sdk-android.git $and_repo"
 
 ## Android APK config
 project_name="simple-sample"
@@ -37,6 +37,11 @@ function failed()
     exit 1
 }
 
+function replace(){
+    mv $3 $3_old
+    sed -e "s@$1@$2@g" $3_old  > $3
+    rm -f $3_old
+}    
 
 function clean(){
     cd $root_dir
@@ -111,6 +116,14 @@ api.host=http://$env.getsocialize.com/v1
 EOF
 }
 
+function config_stage(){
+    echo "go to android manifest"
+    cd project_dir
+    menifest_file=AndroidManifest.xml
+    replace com.socialize.sample.simple com.socialize.sample.simple.stage $menifest_file
+    replace @string/app_name StageSimpleSample $menifest_file
+}
+
 function main(){
     echo " * * * clean * * * "
     clean
@@ -120,6 +133,9 @@ function main(){
     
     echo " * * * build for prod * * * "
     build_app prod
+
+    echo " * * * config stage parameters * * *"
+    config_stage
 
     echo " * * * build for stage * * * "
     build_app stage
