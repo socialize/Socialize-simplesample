@@ -35,8 +35,7 @@ build_number="%env.BUILD_NUMBER%"
 display_image_name="Icon.png"
 full_size_image_name="Icon.png"
 
-email="champ.somsuk@getsocialize.com,Nate.Griswold@getsocialize.com,builds@getsocialize.com"
-
+email="champ.somsuk@getsocialize.com,Nate.Griswold@getsocialize.com,builds@getsocialize.com,qatester@getsocialize.com"
 
 function failed()
 {
@@ -212,11 +211,14 @@ function usage(){
 function distribute(){
     echo " * * * SDK VERSION * * *"
     version=`cat $ios_repo/version`
-    echo $version
+
+    echo IOS version is $version
 
     echo " * * * ANDROID * * *"
     build_path=/opt/TeamCity/webapps/ROOT/socialize_builds
     android_v=`cat $build_path/android_version`
+    echo android version is $android_v
+
     replace "%android_v%" $android_v "$root_dir/index.html"
     replace "%android_v%" $android_v "$root_dir/mailbody.txt"
     
