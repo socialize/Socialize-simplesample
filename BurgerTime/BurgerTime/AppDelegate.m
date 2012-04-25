@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import <Socialize/Socialize.h>
-#import "SampleEntityLoader.h"
 
 @implementation AppDelegate
 

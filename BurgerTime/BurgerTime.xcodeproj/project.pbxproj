@@ -385,12 +385,9 @@
 		AA7EFEF114CF7A5D0005ECF5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFEF014CF7A5D0005ECF5 /* MapKit.framework */; };
 		AA7EFEF314CF7A660005ECF5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFEF214CF7A660005ECF5 /* MessageUI.framework */; };
 		AA7EFEF514CF7A9E0005ECF5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFEF414CF7A9E0005ECF5 /* QuartzCore.framework */; };
-		AA7FC35615118047008D4102 /* SampleEntityLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7FC35415118047008D4102 /* SampleEntityLoader.m */; };
-		AA7FC35715118047008D4102 /* SampleEntityLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7FC35515118047008D4102 /* SampleEntityLoader.xib */; };
 		AACED10E151291A3006C42A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7EFD7C14CF727C0005ECF5 /* main.m */; };
 		AACED10F151291A3006C42A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7EFD8014CF727C0005ECF5 /* AppDelegate.m */; };
 		AACED110151291A3006C42A7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7EFD8914CF727C0005ECF5 /* ViewController.m */; };
-		AACED111151291A3006C42A7 /* SampleEntityLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7FC35415118047008D4102 /* SampleEntityLoader.m */; };
 		AACED113151291A3006C42A7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFD7414CF727C0005ECF5 /* CoreGraphics.framework */; };
 		AACED114151291A3006C42A7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFEF414CF7A9E0005ECF5 /* QuartzCore.framework */; };
 		AACED115151291A3006C42A7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFEF214CF7A660005ECF5 /* MessageUI.framework */; };
@@ -400,7 +397,6 @@
 		AACED119151291A3006C42A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFD7214CF727C0005ECF5 /* Foundation.framework */; };
 		AACED11C151291A3006C42A7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA7EFD7914CF727C0005ECF5 /* InfoPlist.strings */; };
 		AACED11F151291A3006C42A7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7EFD9014CF73E60005ECF5 /* Icon.png */; };
-		AACED1D2151291A3006C42A7 /* SampleEntityLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7FC35515118047008D4102 /* SampleEntityLoader.xib */; };
 		AAEE36D5151AC89A00BFAB7D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEE36D4151AC89A00BFAB7D /* ViewController.xib */; };
 		AAEE36D6151AC89A00BFAB7D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEE36D4151AC89A00BFAB7D /* ViewController.xib */; };
 /* End PBXBuildFile section */
@@ -606,9 +602,6 @@
 		AA7EFEF014CF7A5D0005ECF5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AA7EFEF214CF7A660005ECF5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		AA7EFEF414CF7A9E0005ECF5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		AA7FC35315118047008D4102 /* SampleEntityLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleEntityLoader.h; sourceTree = "<group>"; };
-		AA7FC35415118047008D4102 /* SampleEntityLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleEntityLoader.m; sourceTree = "<group>"; };
-		AA7FC35515118047008D4102 /* SampleEntityLoader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleEntityLoader.xib; sourceTree = "<group>"; };
 		AACED1D8151291A3006C42A7 /* simplesamplestage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simplesamplestage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACED1DA151291A3006C42A7 /* simplesamplestage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "simplesamplestage-Info.plist"; path = "/Users/griswold/ios/Socialize-simplesample/BurgerTime/simplesamplestage-Info.plist"; sourceTree = "<absolute>"; };
 		AAEE36D4151AC89A00BFAB7D /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -884,9 +877,6 @@
 		AA7EFD7614CF727C0005ECF5 /* BurgerTime */ = {
 			isa = PBXGroup;
 			children = (
-				AA7FC35315118047008D4102 /* SampleEntityLoader.h */,
-				AA7FC35415118047008D4102 /* SampleEntityLoader.m */,
-				AA7FC35515118047008D4102 /* SampleEntityLoader.xib */,
 				AA7EFD7F14CF727C0005ECF5 /* AppDelegate.h */,
 				AA7EFD8014CF727C0005ECF5 /* AppDelegate.m */,
 				AA7EFD8814CF727C0005ECF5 /* ViewController.h */,
@@ -980,7 +970,6 @@
 			files = (
 				AA7EFD7B14CF727C0005ECF5 /* InfoPlist.strings in Resources */,
 				AA7EFD9114CF73E60005ECF5 /* Icon.png in Resources */,
-				AA7FC35715118047008D4102 /* SampleEntityLoader.xib in Resources */,
 				AAEE36D5151AC89A00BFAB7D /* ViewController.xib in Resources */,
 				AA26A77C1538B83E0014C8C2 /* action-bar-bg.png in Resources */,
 				AA26A77E1538B83E0014C8C2 /* action-bar-bg@2x.png in Resources */,
@@ -1173,7 +1162,6 @@
 			files = (
 				AACED11C151291A3006C42A7 /* InfoPlist.strings in Resources */,
 				AACED11F151291A3006C42A7 /* Icon.png in Resources */,
-				AACED1D2151291A3006C42A7 /* SampleEntityLoader.xib in Resources */,
 				AAEE36D6151AC89A00BFAB7D /* ViewController.xib in Resources */,
 				AA26A77D1538B83E0014C8C2 /* action-bar-bg.png in Resources */,
 				AA26A77F1538B83E0014C8C2 /* action-bar-bg@2x.png in Resources */,
@@ -1370,7 +1358,6 @@
 				AA7EFD7D14CF727C0005ECF5 /* main.m in Sources */,
 				AA7EFD8114CF727C0005ECF5 /* AppDelegate.m in Sources */,
 				AA7EFD8A14CF727C0005ECF5 /* ViewController.m in Sources */,
-				AA7FC35615118047008D4102 /* SampleEntityLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1381,7 +1368,6 @@
 				AACED10E151291A3006C42A7 /* main.m in Sources */,
 				AACED10F151291A3006C42A7 /* AppDelegate.m in Sources */,
 				AACED110151291A3006C42A7 /* ViewController.m in Sources */,
-				AACED111151291A3006C42A7 /* SampleEntityLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
