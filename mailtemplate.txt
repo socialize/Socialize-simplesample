@@ -8,14 +8,17 @@ and Android version is %android_v%.
 For over the air installation click on here:
     http://ned.appmakr.com/repository/download/%buildType%/%buildId%:id/index.html
 
-for download ipa file and install on itune download here
+for download IOS ipa file and install on itune download here
 STAGE:
     http://ned.appmakr.com/guestAuth/repository/download/%buildType%/%buildId%:id/simplesamplestage.ipa
 PROD:
     http://ned.appmakr.com/guestAuth/repository/download/%buildType%/%buildId%:id/simplesample.ipa
 
-
-
-
+for download android apk file and install on itune download here
+STAGE:
+    http://ned.appmakr.com/socialize_builds/socialize-simple-sample-release-stage.apk
+PROD:
+    http://ned.appmakr.com/socialize_builds/socialize-simple-sample-release-prod.apk
+ 
 with love & care,
 NED
