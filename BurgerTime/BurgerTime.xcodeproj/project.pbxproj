@@ -385,6 +385,8 @@
 		AA7EFEF114CF7A5D0005ECF5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFEF014CF7A5D0005ECF5 /* MapKit.framework */; };
 		AA7EFEF314CF7A660005ECF5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFEF214CF7A660005ECF5 /* MessageUI.framework */; };
 		AA7EFEF514CF7A9E0005ECF5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7EFEF414CF7A9E0005ECF5 /* QuartzCore.framework */; };
+		AA7F8BB61559ADD8000ADA70 /* SampleEntityLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7F8BB51559ADD8000ADA70 /* SampleEntityLoader.xib */; };
+		AA7F8BB71559ADD8000ADA70 /* SampleEntityLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7F8BB51559ADD8000ADA70 /* SampleEntityLoader.xib */; };
 		AACED10E151291A3006C42A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7EFD7C14CF727C0005ECF5 /* main.m */; };
 		AACED10F151291A3006C42A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7EFD8014CF727C0005ECF5 /* AppDelegate.m */; };
 		AACED110151291A3006C42A7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7EFD8914CF727C0005ECF5 /* ViewController.m */; };
@@ -602,6 +604,7 @@
 		AA7EFEF014CF7A5D0005ECF5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AA7EFEF214CF7A660005ECF5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		AA7EFEF414CF7A9E0005ECF5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AA7F8BB51559ADD8000ADA70 /* SampleEntityLoader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SampleEntityLoader.xib; path = ../Socialize.framework/Versions/A/Resources/SampleEntityLoader.xib; sourceTree = "<group>"; };
 		AACED1D8151291A3006C42A7 /* simplesamplestage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simplesamplestage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACED1DA151291A3006C42A7 /* simplesamplestage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "simplesamplestage-Info.plist"; path = "/Users/griswold/ios/Socialize-simplesample/BurgerTime/simplesamplestage-Info.plist"; sourceTree = "<absolute>"; };
 		AAEE36D4151AC89A00BFAB7D /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -654,6 +657,7 @@
 		AA26A6C41538B83E0014C8C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AA7F8BB51559ADD8000ADA70 /* SampleEntityLoader.xib */,
 				AA26A6C51538B83E0014C8C2 /* action-bar-bg.png */,
 				AA26A6C61538B83E0014C8C2 /* action-bar-bg@2x.png */,
 				AA26A6C71538B83E0014C8C2 /* action-bar-button-black-hover.png */,
@@ -1153,6 +1157,7 @@
 				AA26A8E21538B83F0014C8C2 /* SocializeRichPushNotificationViewController.xib in Resources */,
 				AA26A8E41538B83F0014C8C2 /* SocializeTableViewController.xib in Resources */,
 				AA26A8E61538B83F0014C8C2 /* SocializeTwitterAuthViewController.xib in Resources */,
+				AA7F8BB61559ADD8000ADA70 /* SampleEntityLoader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1345,6 +1350,7 @@
 				AA26A8E31538B83F0014C8C2 /* SocializeRichPushNotificationViewController.xib in Resources */,
 				AA26A8E51538B83F0014C8C2 /* SocializeTableViewController.xib in Resources */,
 				AA26A8E71538B83F0014C8C2 /* SocializeTwitterAuthViewController.xib in Resources */,
+				AA7F8BB71559ADD8000ADA70 /* SampleEntityLoader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
