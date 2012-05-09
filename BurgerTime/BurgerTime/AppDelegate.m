@@ -34,6 +34,8 @@
     // Override point for customization after application launch.
     [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)]; 
 
+    [Socialize storeAnonymousAllowed:YES];
+    
     [Socialize setEntityLoaderBlock:^(UINavigationController *navigationController, id<SocializeEntity>entity) {
         SampleEntityLoader *entityLoader = [[SampleEntityLoader alloc] initWithEntity:entity];
         [navigationController pushViewController:entityLoader animated:YES];
@@ -45,6 +47,15 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
 
+    NSDictionary *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (notification != nil) {
+        if ([Socialize handleNotification:notification]) {
+            NSLog(@"Socialize handled the notification on app launch.");
+        } else {
+            NSLog(@"Socialize did not handle the notification on app launch.");
+        }
+    }
+    
     return YES;
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {    
@@ -96,6 +107,8 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"Handling notiication from didReceiveRemoteNotification");
+
     if ([Socialize handleNotification:userInfo]) {
         return;
     }
