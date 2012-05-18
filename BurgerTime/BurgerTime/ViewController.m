@@ -24,7 +24,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.actionBar = [SocializeActionBar actionBarWithUrl:@"http://www.example.com/object/1234" presentModalInController:self];
+    self.actionBar = [SocializeActionBar actionBarWithKey:@"http://www.example.com/object/1234" name:@"Talk" presentModalInController:self];
     [self.view addSubview:self.actionBar.view];
 }
 
