@@ -24,8 +24,8 @@
         [Socialize storeConsumerSecret:@"25957111-3f42-413d-8d5b-a602c32680d5"];
     } else if ([appID isEqualToString:@"com.getsocialize.simplesamplestage"]) {
         [Socialize storeFacebookAppId:@"210343369066525"];
-        [Socialize storeConsumerKey:@"bc152bdf-1497-447a-9e6b-758d4856758f"];
-        [Socialize storeConsumerSecret:@"79c544ca-fbe1-4da4-8bf4-0decedc24e65"];
+        [Socialize storeConsumerKey:@"e8d3c6b2-6cef-483d-ba13-1127030a5575"];
+        [Socialize storeConsumerSecret:@"a3f06467-cc9a-4b92-a9a3-a1f04599d073"];
     }
 
     [Socialize storeTwitterConsumerKey:@"PlOb10oxhUAy2CFuUo5Ew"];
