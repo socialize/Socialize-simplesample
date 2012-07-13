@@ -25,7 +25,7 @@ config_path="build/Socialize.embeddedframework/Socialize.framework/Versions/A/Re
 config_file="SocializeConfigurationInfo.plist"
 environment="stage"
 target="simplesample"
-sdk="iphoneos5.1"
+sdk="iphoneos"
 
 prod_mobile_provision="/usr/local/socialize/simplesample_assets/simple_sample_production.mobileprovision"
 stage_mobile_provision="/usr/local/socialize/simplesample_assets/Simple_Sample_Stage_Server.mobileprovision"
